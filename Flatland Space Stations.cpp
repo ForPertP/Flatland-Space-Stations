@@ -1,3 +1,10 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+vector<string> split_string(string);
+
+// Complete the flatlandSpaceStations function below.
 int flatlandSpaceStations(int n, vector<int> arr)
 {
     std::sort(arr.begin(), arr.end());
