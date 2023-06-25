@@ -23,3 +23,39 @@ int flatlandSpaceStations(int n, vector<int> arr)
 
     return (maxDistance < lastGap) ? lastGap : maxDistance;
 }
+
+
+int main()
+{
+    ofstream fout(getenv("OUTPUT_PATH"));
+
+    string nm_temp;
+    getline(cin, nm_temp);
+
+    vector<string> nm = split_string(nm_temp);
+
+    int n = stoi(nm[0]);
+
+    int m = stoi(nm[1]);
+
+    string c_temp_temp;
+    getline(cin, c_temp_temp);
+
+    vector<string> c_temp = split_string(c_temp_temp);
+
+    vector<int> c(m);
+
+    for (int i = 0; i < m; i++) {
+        int c_item = stoi(c_temp[i]);
+
+        c[i] = c_item;
+    }
+
+    int result = flatlandSpaceStations(n, c);
+
+    fout << result << "\n";
+
+    fout.close();
+
+    return 0;
+}
