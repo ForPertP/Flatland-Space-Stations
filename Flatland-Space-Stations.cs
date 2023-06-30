@@ -13,7 +13,8 @@ using System.Text;
 using System;
 
 class Solution {
- // Complete the flatlandSpaceStations function below.
+
+    // Complete the flatlandSpaceStations function below.
     static int flatlandSpaceStations(int n, int[] arr) {
         Array.Sort(arr);
         int maxDistance = arr[0];
@@ -31,5 +32,23 @@ class Solution {
 
         return (maxDistance < lastGap) ? lastGap : maxDistance;
 
-    }  
+    }
+
+    static void Main(string[] args) {
+        TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
+
+        string[] nm = Console.ReadLine().Split(' ');
+
+        int n = Convert.ToInt32(nm[0]);
+
+        int m = Convert.ToInt32(nm[1]);
+
+        int[] c = Array.ConvertAll(Console.ReadLine().Split(' '), cTemp => Convert.ToInt32(cTemp));
+        int result = flatlandSpaceStations(n, c);
+
+        textWriter.WriteLine(result);
+
+        textWriter.Flush();
+        textWriter.Close();
+    }
 }
